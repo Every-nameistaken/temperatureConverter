@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        color: lightblue;
+    }
+    .header{
+        margin-top: -40px;
+        margin-bottom: 40px;
+    }
+    div{
+        width: 450px;
+        padding: 80px 0;
+        margin: auto;
+        text-align: center;
+        border-radius: 30px;
+        box-shadow: 1px 1px 3px 3px;
+    }
+    #display, #display1{
+        padding: 80px , 0px;
+        width: 200px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid;
+        background-color: white;
+        font-size: larger;
+        font-weight: 400;
+    } 
+   
+    button{
+        width: 140px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        font-family: sans-serif;
+        background-color: gray;
+
+    }
+    button:hover{
+        color: gray;
+        background-color: lightgray;
+    }
+</style>
+<body>
+    <div>
+        <h1 class="header">TEMPERATURE CONVERTER</h1>
+        <input type="text" id="display">
+    <button onclick="convFToC()">Convert to Celsius</button>
+    <h1 class="show"></h1>
+    <br><br><br>
+    <input type="text" id="display1">
+    <button onclick="conCToF()">Convert to Farenheit</button>
+    <h1 class="show1"></h1>
+    </div>
+    
+    <script>
+        function convFToC(){
+        const fToC = function(a){
+        return (a-32) * 5/9;
+        
+      };
+      let result = fToC(document.getElementById('display').value);
+      document.querySelector('.show').innerHTML =result.toFixed(1);
+        }
+
+        function conCToF(){
+        const cToF = function(a){
+        return (a*9/5)+32;
+      };
+        let result1 = cToF(document.getElementById('display1').value)
+        document.querySelector('.show1').innerHTML = result1.toFixed(1);
+        }
+
+        let body = document.getElementsByTagName('body');
+        body[0].style.fontFamily = 'monospace';
+    </script>
+    
+</body>
+</html>
